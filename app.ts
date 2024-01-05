@@ -8,4 +8,12 @@ function printResult(num: number): void {
 
 printResult(add(10, 15))
 
+let combineValues: (a: number, b: number) => number;
+
+combineValues = add;
+// combineValues = printResult;
+// combineValues = 5;
+
+console.log(combineValues(5, 5));
+
 // let someValue: undefined;
