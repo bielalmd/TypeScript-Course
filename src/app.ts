@@ -31,7 +31,26 @@ if (button){
     button.addEventListener('click', event => console.log(event));
 }
 
-printOutput(add1(1))
+printOutput(add1(1));
+
+const hobbies = ['Photography', 'Play Games'];
+const activeHobbies = ['Trip'];
+
+activeHobbies.push(...hobbies);
+console.log(activeHobbies);
+
+const person = {
+    name: 'Gabriel',
+    age: 26
+}
+
+const copiedPerson = {
+    ...person, 
+    hobbies: 'Trip'
+};
+
+console.log(person);
+console.log(copiedPerson);
 
 // On TypeScript var is a global and function variable, so the TS identify var same as JavaScript
 // So un TS we use variable calls 'let'

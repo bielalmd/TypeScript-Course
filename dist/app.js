@@ -14,4 +14,15 @@ if (button) {
     button.addEventListener('click', event => console.log(event));
 }
 printOutput(add1(1));
+const hobbies = ['Photography', 'Play Games'];
+const activeHobbies = ['Trip'];
+activeHobbies.push(...hobbies);
+console.log(activeHobbies);
+const person = {
+    name: 'Gabriel',
+    age: 26
+};
+const copiedPerson = Object.assign(Object.assign({}, person), { hobbies: 'Trip' });
+console.log(person);
+console.log(copiedPerson);
 //# sourceMappingURL=app.js.map
