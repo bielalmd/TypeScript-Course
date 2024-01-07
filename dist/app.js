@@ -8,6 +8,6 @@ if (typeof userInput === 'string') {
 }
 function generateError(msg, code) {
     throw { msg: msg, errorCode: code };
-    // while(true) {}
 }
 generateError('An error occurred!', 500);
+//# sourceMappingURL=app.js.map
