@@ -1,5 +1,7 @@
-function aliasF(data: string) {
-    console.log(data);
+const button = document.querySelector('button')!;
+
+function clickHandle() {
+    console.log(`Clicked`);
 }
 
-aliasF('Hey this is a string...')
+button.addEventListener('click', clickHandle.bind(null))
