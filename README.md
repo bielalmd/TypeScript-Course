@@ -1,1 +1,1 @@
-# Section one: TypeScript Basics and Basics Types
+# Udemy Course for Typescript
