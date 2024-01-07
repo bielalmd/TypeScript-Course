@@ -7,6 +7,11 @@ function add(a, b) {
     result = a + b;
     return result;
 }
-const add1 = (a, b) => a + b;
-console.log(add1(10, 20));
+const add1 = (a, b = 1) => a + b;
+const printOutput = output => console.log(output);
+const button = document.querySelector('button');
+if (button) {
+    button.addEventListener('click', event => console.log(event));
+}
+printOutput(add1(1));
 //# sourceMappingURL=app.js.map
