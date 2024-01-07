@@ -7,4 +7,6 @@ function add(a, b) {
     result = a + b;
     return result;
 }
+const add1 = (a, b) => a + b;
+console.log(add1(10, 20));
 //# sourceMappingURL=app.js.map
