@@ -2,18 +2,6 @@
 const userName = 'Gabriel';
 let age = 26;
 age = 28;
-function add(a, b) {
-    let result;
-    result = a + b;
-    return result;
-}
-const add1 = (a, b = 1) => a + b;
-const printOutput = output => console.log(output);
-const button = document.querySelector('button');
-if (button) {
-    button.addEventListener('click', event => console.log(event));
-}
-printOutput(add1(1));
 const hobbies = ['Photography', 'Play Games'];
 const activeHobbies = ['Trip'];
 activeHobbies.push(...hobbies);
@@ -23,6 +11,18 @@ const person = {
     age: 26
 };
 const copiedPerson = Object.assign(Object.assign({}, person), { hobbies: 'Trip' });
-console.log(person);
-console.log(copiedPerson);
+const add = (...num) => {
+    return num.reduce((curResult, curValue) => {
+        return curResult + curValue;
+    }, 0);
+};
+const concatStrings = (...strings) => {
+    return strings.reduce((s1, s2) => {
+        return s1 + s2;
+    }, 'hi: ');
+};
+const addStringNames = concatStrings('Gabriel ', 'And ', 'Gabriela');
+console.log(addStringNames);
+const addedNumbers = add(5, 10, 15, 0);
+console.log(addedNumbers);
 //# sourceMappingURL=app.js.map
