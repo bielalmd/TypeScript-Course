@@ -1,10 +1,10 @@
-const userName = 'Gabriel';
+// const userName = 'Gabriel';
 
 // userName = 'Pedro';
 
-let age = 26;
+// let age = 26;
 
-age = 28;
+// age = 28;
 
 // function add(a: number, b: number) {
 //     let result;
@@ -40,7 +40,7 @@ activeHobbies.push(...hobbies);
 console.log(activeHobbies);
 
 const person = {
-    name: 'Gabriel',
+    firstName: 'Gabriel',
     age: 26
 }
 
@@ -65,10 +65,17 @@ const concatStrings = (...strings: [string, string, string ]) => {
 }
 
 const addStringNames = concatStrings('Gabriel ', 'And ', 'Gabriela');
-console.log(addStringNames);
+// console.log(addStringNames);
 
 const addedNumbers = add(5,10,15,0)
-console.log(addedNumbers);
+// console.log(addedNumbers);
+
+const [hobby1, hobby2, ...remainsHobbies] = hobbies;
+console.log(hobbies, hobby1, hobby2);
+
+const {firstName: userName, age} = person;
+
+console.log(userName, age, person);
 
 // On TypeScript var is a global and function variable, so the TS identify var same as JavaScript
 // So un TS we use variable calls 'let'

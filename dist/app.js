@@ -1,13 +1,10 @@
 "use strict";
-const userName = 'Gabriel';
-let age = 26;
-age = 28;
 const hobbies = ['Photography', 'Play Games'];
 const activeHobbies = ['Trip'];
 activeHobbies.push(...hobbies);
 console.log(activeHobbies);
 const person = {
-    name: 'Gabriel',
+    firstName: 'Gabriel',
     age: 26
 };
 const copiedPerson = Object.assign(Object.assign({}, person), { hobbies: 'Trip' });
@@ -22,7 +19,9 @@ const concatStrings = (...strings) => {
     }, 'hi: ');
 };
 const addStringNames = concatStrings('Gabriel ', 'And ', 'Gabriela');
-console.log(addStringNames);
 const addedNumbers = add(5, 10, 15, 0);
-console.log(addedNumbers);
+const [hobby1, hobby2, ...remainsHobbies] = hobbies;
+console.log(hobbies, hobby1, hobby2);
+const { firstName: userName, age } = person;
+console.log(userName, age, person);
 //# sourceMappingURL=app.js.map
