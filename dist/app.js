@@ -1,5 +1,5 @@
 "use strict";
-class Departament {
+class Department {
     constructor(id, name) {
         this.id = id;
         this.name = name;
@@ -16,9 +16,31 @@ class Departament {
         console.log(this.employees);
     }
 }
-const accounting = new Departament('ad1', 'Accounting');
-accounting.addEmployee('Gabriel');
-accounting.addEmployee('Pedro');
-accounting.printEmployeeInfo();
-accounting.describe();
+class ITDepartment extends Department {
+    constructor(id, admins) {
+        super(id, 'IT');
+        this.admins = admins;
+    }
+}
+class AccountingDepartment extends Department {
+    constructor(id, reports) {
+        super(id, 'Accounting');
+        this.reports = reports;
+    }
+    addReports(text) {
+        this.reports.push(text);
+    }
+    printReports() {
+        console.log(this.reports);
+    }
+}
+const it = new ITDepartment('ad1', ['Biel']);
+it.addEmployee('Gabriel');
+it.addEmployee('Pedro');
+it.printEmployeeInfo();
+it.describe();
+console.log(it);
+const accounting = new AccountingDepartment('d2', []);
+accounting.addReports('Something its rong on the back end');
+accounting.printReports();
 //# sourceMappingURL=app.js.map
