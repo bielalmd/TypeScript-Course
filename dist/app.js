@@ -5,9 +5,6 @@ class Department {
         this.name = name;
         this.employees = [];
     }
-    describe() {
-        console.log(`Department (${this.id}): ${this.name}`);
-    }
     addEmployee(employee) {
         this.employees.push(employee);
     }
@@ -24,6 +21,9 @@ class ITDepartment extends Department {
     constructor(id, admins) {
         super(id, 'IT');
         this.admins = admins;
+    }
+    describe() {
+        console.log(`IT Department ${this.id}`);
     }
 }
 class AccountingDepartment extends Department {
@@ -43,6 +43,9 @@ class AccountingDepartment extends Department {
         super(id, 'Accounting');
         this.reports = reports;
         this.lastReport = reports[0];
+    }
+    describe() {
+        console.log(`Accounting Department - ID ${this.id}`);
     }
     addEmployee(name) {
         if (name === 'Gabriel') {
@@ -68,9 +71,7 @@ console.log(it);
 const accounting = new AccountingDepartment('d2', []);
 accounting.mostRecentReports = 'Now i can see this';
 accounting.addReports('Something its rong on the back end');
-console.log(accounting.mostRecentReports);
 accounting.addEmployee('Gabriel');
 accounting.addEmployee('Lucas');
-accounting.printReports();
-accounting.printEmployeeInfo();
+accounting.describe();
 //# sourceMappingURL=app.js.map
