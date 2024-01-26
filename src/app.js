@@ -20,6 +20,9 @@ var fetchedUserData = {
     job: { title: 'Developer', description: 'On Microsoft' }
 };
 console.log((_a = fetchedUserData === null || fetchedUserData === void 0 ? void 0 : fetchedUserData.job) === null || _a === void 0 ? void 0 : _a.title);
+var userInput = undefined;
+var storedData = userInput !== null && userInput !== void 0 ? userInput : 'DEFAULT';
+console.log(storedData);
 // console.log(add('1', '2'));
 // type UnknownEmployee = Employee | Admin;
 // function printEmployeeInfo(emp: UnknownEmployee) {
