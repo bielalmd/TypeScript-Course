@@ -1,3 +1,4 @@
+var _a;
 var e1 = {
     name: 'Gabriel',
     privileges: ['creat-server'],
@@ -13,6 +14,12 @@ var result = add('Max', 'Sherek');
 console.log(result);
 result.split(' ');
 console.log(result);
+var fetchedUserData = {
+    id: 'user1',
+    name: 'Gabriel',
+    job: { title: 'Developer', description: 'On Microsoft' }
+};
+console.log((_a = fetchedUserData === null || fetchedUserData === void 0 ? void 0 : fetchedUserData.job) === null || _a === void 0 ? void 0 : _a.title);
 // console.log(add('1', '2'));
 // type UnknownEmployee = Employee | Admin;
 // function printEmployeeInfo(emp: UnknownEmployee) {

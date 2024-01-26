@@ -35,6 +35,14 @@ console.log(result);
 result.split(' ');
 console.log(result);
 
+const fetchedUserData = {
+    id: 'user1',
+    name: 'Gabriel',
+    job: { title: 'Developer', description: 'On Microsoft'}
+};
+
+console.log(fetchedUserData?.job?.title);
+
 // console.log(add('1', '2'));
 
 // type UnknownEmployee = Employee | Admin;
