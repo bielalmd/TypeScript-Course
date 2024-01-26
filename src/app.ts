@@ -112,3 +112,11 @@ if(userInputEl) {
     (userInputEl as HTMLInputElement).value = 'Hi'
 }
 
+interface ErrorContainer { // {email: 'Not a valid email', userName: 'Must start with a caracter'}
+    [prop: string]: string
+}
+
+const errorBag: ErrorContainer = {
+    email: 'Is not a valid email',
+    userName: 'Must start with a capital caracter'
+};

@@ -66,3 +66,7 @@ var userInputEl = document.getElementById('inputID');
 if (userInputEl) {
     userInputEl.value = 'Hi';
 }
+var errorBag = {
+    email: 'Is not a valid email',
+    userName: 'Must start with a capital caracter'
+};
