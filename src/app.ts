@@ -30,93 +30,98 @@ function add(a: Combinable, b: Combinable) {
     return a + b;
 }
 
-console.log(add('1', '2'));
+const result =  add('Max', 'Sherek') as string;
+console.log(result);
+result.split(' ');
+console.log(result);
 
-type UnknownEmployee = Employee | Admin;
+// console.log(add('1', '2'));
 
-function printEmployeeInfo(emp: UnknownEmployee) {
-    console.log(`Name: ${emp.name}`);
+// type UnknownEmployee = Employee | Admin;
 
-    if ('privileges' in emp) {
-        console.log(`Privileges: ${emp.privileges}`);
-    }
+// function printEmployeeInfo(emp: UnknownEmployee) {
+//     console.log(`Name: ${emp.name}`);
 
-    if ('startDate' in emp) {
-        console.log(`Start Date: ${emp.startDate}`);
-    }
-}
+//     if ('privileges' in emp) {
+//         console.log(`Privileges: ${emp.privileges}`);
+//     }
 
-printEmployeeInfo({name: 'Gabriel', startDate: new Date()});
+//     if ('startDate' in emp) {
+//         console.log(`Start Date: ${emp.startDate}`);
+//     }
+// }
 
-class Car {
-    drive() {
-        console.log(' Driving...');
-    }
-}
+// printEmployeeInfo({name: 'Gabriel', startDate: new Date()});
 
-class Truck {
-    drive() {
-        console.log(' Driving a truck...');
-    }
+// class Car {
+//     drive() {
+//         console.log(' Driving...');
+//     }
+// }
 
-    loadCargo(amount: number) {
-        console.log(`Loading cargo... ${amount}`);
-    }
-}
+// class Truck {
+//     drive() {
+//         console.log(' Driving a truck...');
+//     }
 
-type Vehicle = Car | Truck;
+//     loadCargo(amount: number) {
+//         console.log(`Loading cargo... ${amount}`);
+//     }
+// }
 
-const v1 = new Car();
-const v2 = new Truck();
+// type Vehicle = Car | Truck;
 
-function useVehicle(vehicle: Vehicle) {
-    vehicle.drive();
-    if (vehicle instanceof Truck) {
-        vehicle.loadCargo(1000);
-    }
-}
+// const v1 = new Car();
+// const v2 = new Truck();
 
-useVehicle(v1)
-useVehicle(v2)
+// function useVehicle(vehicle: Vehicle) {
+//     vehicle.drive();
+//     if (vehicle instanceof Truck) {
+//         vehicle.loadCargo(1000);
+//     }
+// }
 
-interface Bird {
-    type: 'bird';
-    flyingSpeed: number;
-}
+// useVehicle(v1)
+// useVehicle(v2)
 
-interface Horse {
-    type: 'horse';
-    runningSpeed: number;
-}
+// interface Bird {
+//     type: 'bird';
+//     flyingSpeed: number;
+// }
 
-type Animal = Bird | Horse;
+// interface Horse {
+//     type: 'horse';
+//     runningSpeed: number;
+// }
 
-function moveAnimal(animal: Animal) {
-    let speed;
-    switch (animal.type) {
-        case 'bird':
-            speed = animal.flyingSpeed;
-        break;
-        case 'horse':
-            speed = animal.runningSpeed;
-    }
-    console.log(`Moving at speed ${speed}`);
-}
+// type Animal = Bird | Horse;
 
-moveAnimal({type: 'bird', flyingSpeed: 10});
+// function moveAnimal(animal: Animal) {
+//     let speed;
+//     switch (animal.type) {
+//         case 'bird':
+//             speed = animal.flyingSpeed;
+//         break;
+//         case 'horse':
+//             speed = animal.runningSpeed;
+//     }
+//     console.log(`Moving at speed ${speed}`);
+// }
 
-// const userInputEl = <HTMLInputElement> document.getElementById('inputID')!;
-const userInputEl = document.getElementById('inputID');
+// moveAnimal({type: 'bird', flyingSpeed: 10});
 
-if(userInputEl) {
-    (userInputEl as HTMLInputElement).value = 'Hi'
-}
+// // const userInputEl = <HTMLInputElement> document.getElementById('inputID')!;
+// const userInputEl = document.getElementById('inputID');
 
-interface ErrorContainer { // {email: 'Not a valid email', userName: 'Must start with a caracter'}
-    [prop: string]: string
-}
+// if(userInputEl) {
+//     (userInputEl as HTMLInputElement).value = 'Hi'
+// }
 
-const errorBag: ErrorContainer = {
-    email: 'Is not a valid email',
-    userName: 'Must start with a capital caracter'
-};
+// interface ErrorContainer { // {email: 'Not a valid email', userName: 'Must start with a caracter'}
+//     [prop: string]: string
+// }
+
+// const errorBag: ErrorContainer = {
+//     email: 'Is not a valid email',
+//     userName: 'Must start with a capital caracter'
+// };
