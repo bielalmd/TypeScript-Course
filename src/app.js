@@ -1,94 +1,16 @@
-var _a;
-var e1 = {
-    name: 'Gabriel',
-    privileges: ['creat-server'],
-    startDate: new Date()
-};
-function add(a, b) {
-    if (typeof a === 'string' || typeof b === 'string') {
-        return a.toString() + b.toString();
-    }
-    return a + b;
+// const names: Array<string> = []
+// // names[0].split('');
+// // console.log(names);
+// const promise: Promise<any> = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         resolve('This is over!!!')
+//     }, 2000);
+// });
+// promise.then(data => {
+//     data.split(' ');
+// });
+function merge(objA, objB) {
+    return Object.assign(objA, objB);
 }
-var result = add('Max', 'Sherek');
-console.log(result);
-result.split(' ');
-console.log(result);
-var fetchedUserData = {
-    id: 'user1',
-    name: 'Gabriel',
-    job: { title: 'Developer', description: 'On Microsoft' }
-};
-console.log((_a = fetchedUserData === null || fetchedUserData === void 0 ? void 0 : fetchedUserData.job) === null || _a === void 0 ? void 0 : _a.title);
-var userInput = undefined;
-var storedData = userInput !== null && userInput !== void 0 ? userInput : 'DEFAULT';
-console.log(storedData);
-// console.log(add('1', '2'));
-// type UnknownEmployee = Employee | Admin;
-// function printEmployeeInfo(emp: UnknownEmployee) {
-//     console.log(`Name: ${emp.name}`);
-//     if ('privileges' in emp) {
-//         console.log(`Privileges: ${emp.privileges}`);
-//     }
-//     if ('startDate' in emp) {
-//         console.log(`Start Date: ${emp.startDate}`);
-//     }
-// }
-// printEmployeeInfo({name: 'Gabriel', startDate: new Date()});
-// class Car {
-//     drive() {
-//         console.log(' Driving...');
-//     }
-// }
-// class Truck {
-//     drive() {
-//         console.log(' Driving a truck...');
-//     }
-//     loadCargo(amount: number) {
-//         console.log(`Loading cargo... ${amount}`);
-//     }
-// }
-// type Vehicle = Car | Truck;
-// const v1 = new Car();
-// const v2 = new Truck();
-// function useVehicle(vehicle: Vehicle) {
-//     vehicle.drive();
-//     if (vehicle instanceof Truck) {
-//         vehicle.loadCargo(1000);
-//     }
-// }
-// useVehicle(v1)
-// useVehicle(v2)
-// interface Bird {
-//     type: 'bird';
-//     flyingSpeed: number;
-// }
-// interface Horse {
-//     type: 'horse';
-//     runningSpeed: number;
-// }
-// type Animal = Bird | Horse;
-// function moveAnimal(animal: Animal) {
-//     let speed;
-//     switch (animal.type) {
-//         case 'bird':
-//             speed = animal.flyingSpeed;
-//         break;
-//         case 'horse':
-//             speed = animal.runningSpeed;
-//     }
-//     console.log(`Moving at speed ${speed}`);
-// }
-// moveAnimal({type: 'bird', flyingSpeed: 10});
-// // const userInputEl = <HTMLInputElement> document.getElementById('inputID')!;
-// const userInputEl = document.getElementById('inputID');
-// if(userInputEl) {
-//     (userInputEl as HTMLInputElement).value = 'Hi'
-// }
-// interface ErrorContainer { // {email: 'Not a valid email', userName: 'Must start with a caracter'}
-//     [prop: string]: string
-// }
-// const errorBag: ErrorContainer = {
-//     email: 'Is not a valid email',
-//     userName: 'Must start with a capital caracter'
-// };
+var mergeObj = merge({ name: 'Gabriel' }, { age: 26 });
+console.log(mergeObj.age);
