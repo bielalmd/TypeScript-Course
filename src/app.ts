@@ -34,3 +34,10 @@ function countAndPrint<T extends Lengthy>(element: T): [T, string] {
 }
 
 console.log(countAndPrint(['photograhpy','Playing football']));
+
+function extractAndConvert<T extends object, U extends keyof T>(obj: T, key: U) {
+    return `Value: ${obj[key]}`;
+}
+
+
+extractAndConvert({name: 'Gabriel'}, 'name')

@@ -25,3 +25,7 @@ function countAndPrint(element) {
     return [element, descriptionText];
 }
 console.log(countAndPrint(['photograhpy', 'Playing football']));
+function extractAndConvert(obj, key) {
+    return "Value: ".concat(obj[key]);
+}
+extractAndConvert({ name: 'Gabriel' }, 'name');
