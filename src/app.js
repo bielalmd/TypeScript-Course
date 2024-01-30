@@ -64,10 +64,12 @@ textStorage.addItem('Pedro');
 textStorage.removeItem('Pedro');
 console.log(textStorage.getItems());
 var numberStorage = new DataStorage();
-// const objStorage = new DataStorage<object>();
-// const gabrielObj = { name: 'Gabriel'}
-// objStorage.addItem({name: 'Gabriel'});
-// objStorage.addItem({name: 'Mateus'});
-// //...
-// objStorage.removeItem(gabrielObj);
-// console.log(objStorage.getItems());
+function creatCourseGoal(title, description, date) {
+    var courseGoal = {};
+    courseGoal.title = title;
+    courseGoal.description = description;
+    courseGoal.completeUntil = date;
+    return courseGoal;
+}
+var names = ['Gabriel', 'Mates'];
+names.push('Manu');
