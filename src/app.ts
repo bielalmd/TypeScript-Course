@@ -42,14 +42,14 @@ function extractAndConvert<T extends object, U extends keyof T>(obj: T, key: U) 
 
 extractAndConvert({name: 'Gabriel'}, 'name');
 
-class DataStorage<T extends string | number | boolean> {
-    private data: T[] = [];
+class DataStorage {
+    private data: (string | number | boolean) [] = [];
 
-    addItem(item: T) {
+    addItem(item: string | number | boolean) {
         this.data.push(item);
     }
 
-    removeItem(item: T) {
+    removeItem(item: string | number | boolean) {
         if (this.data.indexOf(item) === -1) {
             return;
         }
@@ -61,13 +61,13 @@ class DataStorage<T extends string | number | boolean> {
     }
 }
 
-const textStorage = new DataStorage<string>()
+const textStorage = new DataStorage()
 textStorage.addItem('Gabriel');
 textStorage.addItem('Pedro');
 textStorage.removeItem('Pedro');
 console.log(textStorage.getItems());
 
-const numberStorage = new DataStorage<number>();
+const numberStorage = new DataStorage();
 
 // const objStorage = new DataStorage<object>();
 // const gabrielObj = { name: 'Gabriel'}
@@ -97,4 +97,5 @@ function creatCourseGoal(
 }
 
 const names: Readonly<string[]> = ['Gabriel', 'Mates'];
-names.push('Manu');
+// names.push('Manu');
+

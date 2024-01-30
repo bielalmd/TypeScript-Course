@@ -72,4 +72,4 @@ function creatCourseGoal(title, description, date) {
     return courseGoal;
 }
 var names = ['Gabriel', 'Mates'];
-names.push('Manu');
+// names.push('Manu');
