@@ -73,3 +73,22 @@ function creatCourseGoal(title, description, date) {
 }
 var names = ['Gabriel', 'Mates'];
 // names.push('Manu');
+function echo(arg) {
+    return arg;
+}
+var result = echo("Hello, generics!");
+console.log(result);
+var Box = /** @class */ (function () {
+    function Box(value) {
+        this.value = value;
+    }
+    return Box;
+}());
+var box = new Box(10);
+console.log(box.value);
+var pair = { first: 1, second: "two" };
+console.log(pair);
+function loggingIdentity(arg) {
+    console.log(arg.length); // Aqui, length é permitido, pois 'T' deve ser uma subclasse de Lengthwise
+    return arg;
+}
