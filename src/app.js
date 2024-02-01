@@ -1,94 +1,66 @@
-// const names: Array<string> = []
-// // names[0].split('');
-// // console.log(names);
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
+var __esDecorate = (this && this.__esDecorate) || function (ctor, descriptorIn, decorators, contextIn, initializers, extraInitializers) {
+    function accept(f) { if (f !== void 0 && typeof f !== "function") throw new TypeError("Function expected"); return f; }
+    var kind = contextIn.kind, key = kind === "getter" ? "get" : kind === "setter" ? "set" : "value";
+    var target = !descriptorIn && ctor ? contextIn["static"] ? ctor : ctor.prototype : null;
+    var descriptor = descriptorIn || (target ? Object.getOwnPropertyDescriptor(target, contextIn.name) : {});
+    var _, done = false;
+    for (var i = decorators.length - 1; i >= 0; i--) {
+        var context = {};
+        for (var p in contextIn) context[p] = p === "access" ? {} : contextIn[p];
+        for (var p in contextIn.access) context.access[p] = contextIn.access[p];
+        context.addInitializer = function (f) { if (done) throw new TypeError("Cannot add initializers after decoration has completed"); extraInitializers.push(accept(f || null)); };
+        var result = (0, decorators[i])(kind === "accessor" ? { get: descriptor.get, set: descriptor.set } : descriptor[key], context);
+        if (kind === "accessor") {
+            if (result === void 0) continue;
+            if (result === null || typeof result !== "object") throw new TypeError("Object expected");
+            if (_ = accept(result.get)) descriptor.get = _;
+            if (_ = accept(result.set)) descriptor.set = _;
+            if (_ = accept(result.init)) initializers.unshift(_);
         }
-        return t;
-    };
-    return __assign.apply(this, arguments);
+        else if (_ = accept(result)) {
+            if (kind === "field") initializers.unshift(_);
+            else descriptor[key] = _;
+        }
+    }
+    if (target) Object.defineProperty(target, contextIn.name, descriptor);
+    done = true;
 };
-// const promise: Promise<any> = new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//         resolve('This is over!!!')
-//     }, 2000);
-// });
-// promise.then(data => {
-//     data.split(' ');
-// });
-function merge(objA, objB) {
-    return Object.assign(objA, objB);
-}
-var mergeObj = merge({ name: 'Gabriel' }, { age: 26 });
-console.log(mergeObj.age);
-function countAndPrint(element) {
-    var descriptionText = 'Got no value';
-    if (element.length === 1) {
-        descriptionText = 'Got 1 element';
+var __runInitializers = (this && this.__runInitializers) || function (thisArg, initializers, value) {
+    var useValue = arguments.length > 2;
+    for (var i = 0; i < initializers.length; i++) {
+        value = useValue ? initializers[i].call(thisArg, value) : initializers[i].call(thisArg);
     }
-    else if (element.length > 1) {
-        descriptionText = 'Got ' + element.length + ' elements.';
-    }
-    return [element, descriptionText];
+    return useValue ? value : void 0;
+};
+var __setFunctionName = (this && this.__setFunctionName) || function (f, name, prefix) {
+    if (typeof name === "symbol") name = name.description ? "[".concat(name.description, "]") : "";
+    return Object.defineProperty(f, "name", { configurable: true, value: prefix ? "".concat(prefix, " ", name) : name });
+};
+function Logger(constructor) {
+    console.log('Loading...');
+    console.log(constructor);
 }
-console.log(countAndPrint(['photograhpy', 'Playing football']));
-function extractAndConvert(obj, key) {
-    return "Value: ".concat(obj[key]);
-}
-extractAndConvert({ name: 'Gabriel' }, 'name');
-var DataStorage = /** @class */ (function () {
-    function DataStorage() {
-        this.data = [];
-    }
-    DataStorage.prototype.addItem = function (item) {
-        this.data.push(item);
-    };
-    DataStorage.prototype.removeItem = function (item) {
-        if (this.data.indexOf(item) === -1) {
-            return;
+var Person = function () {
+    var _classDecorators = [Logger];
+    var _classDescriptor;
+    var _classExtraInitializers = [];
+    var _classThis;
+    var Person = _classThis = /** @class */ (function () {
+        function Person_1() {
+            this.name = 'Gabriel';
+            console.log('Creating a person obj');
         }
-        this.data.splice(this.data.indexOf(item), 1);
-    };
-    DataStorage.prototype.getItems = function () {
-        return __assign({}, this.data);
-    };
-    return DataStorage;
-}());
-var textStorage = new DataStorage();
-textStorage.addItem('Gabriel');
-textStorage.addItem('Pedro');
-textStorage.removeItem('Pedro');
-console.log(textStorage.getItems());
-var numberStorage = new DataStorage();
-function creatCourseGoal(title, description, date) {
-    var courseGoal = {};
-    courseGoal.title = title;
-    courseGoal.description = description;
-    courseGoal.completeUntil = date;
-    return courseGoal;
-}
-var names = ['Gabriel', 'Mates'];
-// names.push('Manu');
-function echo(arg) {
-    return arg;
-}
-var result = echo("Hello, generics!");
-console.log(result);
-var Box = /** @class */ (function () {
-    function Box(value) {
-        this.value = value;
-    }
-    return Box;
-}());
-var box = new Box(10);
-console.log(box.value);
-var pair = { first: 1, second: "two" };
-console.log(pair);
-function loggingIdentity(arg) {
-    console.log(arg.length); // Aqui, length é permitido, pois 'T' deve ser uma subclasse de Lengthwise
-    return arg;
-}
+        return Person_1;
+    }());
+    __setFunctionName(_classThis, "Person");
+    (function () {
+        var _metadata = typeof Symbol === "function" && Symbol.metadata ? Object.create(null) : void 0;
+        __esDecorate(null, _classDescriptor = { value: _classThis }, _classDecorators, { kind: "class", name: _classThis.name, metadata: _metadata }, null, _classExtraInitializers);
+        Person = _classThis = _classDescriptor.value;
+        if (_metadata) Object.defineProperty(_classThis, Symbol.metadata, { enumerable: true, configurable: true, writable: true, value: _metadata });
+        __runInitializers(_classThis, _classExtraInitializers);
+    })();
+    return Person = _classThis;
+}();
+var pers = new Person();
+console.log(pers);
