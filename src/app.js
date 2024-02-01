@@ -42,8 +42,19 @@ function Logger(logString) {
         console.log(constructor);
     };
 }
+function WithTemplate(template, hookId) {
+    return function (constructor) {
+        var hookEl = document.getElementById(hookId);
+        var p = new constructor();
+        if (hookEl) {
+            hookEl.innerHTML = template;
+            hookEl.querySelector('h1').textContent = p.name;
+        }
+    };
+}
+// @Logger('LOGGIN - PERSON')
 var Person = function () {
-    var _classDecorators = [Logger('LOGGIN - PERSON')];
+    var _classDecorators = [WithTemplate('<h1>My perso Object</h1>', 'app')];
     var _classDescriptor;
     var _classExtraInitializers = [];
     var _classThis;
